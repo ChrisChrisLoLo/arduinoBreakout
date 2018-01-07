@@ -1,0 +1,96 @@
+Name: Christian Lo
+Student ID: 1498360
+
+Name: Kelly Luc
+Student ID: 1498694
+
+NOTE: potentiometer is connected to the buzzer
+
+ACCESSORIES:
+* Arduino Mega Board (AMG)
+* LCD display
+* Kingston flash memory card - 8 GB - microSDHC (MUST BE FORMATTED TO FAT, as well as contain the file "SCORE.txt")
+* SainSmart JoyStick Module
+* Potentiometer
+* Passive Piezo Buzzer With Long Leads (speaker)
+
+HOW TO RUN:
+	1. Plug in the Arduino into the computer and wire it properly
+	2. Take the SCORE.txt file found in this folder and place it onto the SD card. Make sure the SD card has FAT
+		formatting it on it. Place the SD card into the LCD display.
+	3. Use the terminal to open up which directory the file is and use "make upload"
+	4. Wait for it to upload *WARNING* for some reason, the SD card will take a while to load on first boot up.
+		This will result in the lcd displaying white for a short amount of time. Please wait up to half a minute
+		and DO NOT RESET, or the score file will be wiped.
+	5. Enjoy Animated Interactive Desctruction Simulator!
+
+CONTROLS:
+While in game:
+* press joystick button to start game
+* you can move joystick left and right to play the game
+*	the trimpot controls volume
+
+While in name selection:
+* you can go up and down on the joystick to choose a letter to type.
+* press the button to "lock in" your chosen letter, you cannot go back
+	once locked in.
+* lock in three times to choose your name.
+
+While in scoreboard:
+* press joystick button to reset and play the game again.
+
+DIVISION OF CODE:
+For quick reference, there are three modes and three set-ups related to them,
+modes, on a high level, act as a FSM.
+
+-Gameloop(mode 0) and mode0Setup():
+	*Sets up the game loop be resetting variables and drawing shapes. gameLoop() is
+	the loop in which the game plays
+-mode1() and mode1Setup():
+	*Game overscreen, changes from 0 to 1 when ball hits floor.
+-mode2() and mode2Setup();
+	*Score list, which displays all hi-scores
+
+WIRING INSTRUCTION:
+LCD screen:
+
+Board pin <---> Arduino pin
+---------------------------
+GND             GND
+Vin             5V
+3Vo             NOT CONNECTED
+CLK             52
+MISO            50
+MOSI            51
+CS              10
+D/C             9
+RST             NOT CONNECTED
+Lite            NOT CONNECTED
+Y+              A2 (analog pin)
+X+              4  (digital pin)
+Y-              5  (digital pin)
+X-              A3 (analog pin)
+IM0 - IM3       NOT CONNECTED (they expect a 3.3v signal, DON'T CONNECT!)
+CCS             6
+CD              NOT CONNECTED
+
+JoyStick Module:
+
+Board pin <--> Arduino pin
+----------------------------
+GND            GND
+5v             5v
+VRx            A1
+VRy						 A0
+SW						 2
+
+
+Piezo Buzzer With Long Leads and potentiometer
+-----------------------------------------------
+Arduino pin 12 <--> |potentiometer| <--> GND
+middle of potentiometer <--> buzzer <--> GND
+
+*It should be noted that the wiring is exactly the same as assignment 2,
+save the piezo and potentiometer. The piezo acts as a speaker for the game to play sounds
+while the trimpot is optional and is used for volume control. one can directly wire the
+buzzer to pin 12 and ground if one so chooses.
