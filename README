@@ -1,10 +1,7 @@
-Name: Christian Lo
-Student ID: 1498360
+Code by Christian Lo & Kelly Luc
 
-Name: Kelly Luc
-Student ID: 1498694
-
-NOTE: potentiometer is connected to the buzzer
+Check out this video demo!
+https://www.youtube.com/watch?v=iS4tmRseqrA
 
 ACCESSORIES:
 * Arduino Mega Board (AMG)
@@ -13,6 +10,7 @@ ACCESSORIES:
 * SainSmart JoyStick Module
 * Potentiometer
 * Passive Piezo Buzzer With Long Leads (speaker)
+NOTE: potentiometer is connected to the buzzer
 
 HOW TO RUN:
 	1. Plug in the Arduino into the computer and wire it properly
@@ -28,7 +26,7 @@ CONTROLS:
 While in game:
 * press joystick button to start game
 * you can move joystick left and right to play the game
-*	the trimpot controls volume
+* the trimpot controls volume
 
 While in name selection:
 * you can go up and down on the joystick to choose a letter to type.
@@ -40,8 +38,7 @@ While in scoreboard:
 * press joystick button to reset and play the game again.
 
 DIVISION OF CODE:
-For quick reference, there are three modes and three set-ups related to them,
-modes, on a high level, act as a FSM.
+For quick reference, there are three modes and three set-ups related to each.
 
 -Gameloop(mode 0) and mode0Setup():
 	*Sets up the game loop be resetting variables and drawing shapes. gameLoop() is
@@ -81,8 +78,8 @@ Board pin <--> Arduino pin
 GND            GND
 5v             5v
 VRx            A1
-VRy						 A0
-SW						 2
+VRy	       A0
+SW	       2
 
 
 Piezo Buzzer With Long Leads and potentiometer
